@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(logger("dev"));
-app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -20,6 +19,7 @@ mongoose.connection.on('error', console.error.bind(console, 'connection error:')
 
 // routes
 app.use(require("./routes/api.js"));
+app.use(compression());
 
 app.listen(PORT, () => {
     console.log(`App running on http://localhost:${PORT} !`);
