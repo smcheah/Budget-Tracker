@@ -9,7 +9,7 @@ const config = {
         path: `${__dirname}/public/dist`,
         filename: "[name].bundle.js"
     },
-    mode: "development",
+    mode: "none",
     module: {
         rules: [{
             test: /\.m?js$/,
