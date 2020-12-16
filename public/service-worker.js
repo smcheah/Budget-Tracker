@@ -17,8 +17,9 @@ self.addEventListener("install", event => {
     event.waitUntil(caches
         .open(PRECACHE)
         .then(data => data.addAll(FILES_TO_CACHE))
-        .then(() => self.skipWaiting())
+        // .then(() => self.skipWaiting())
     );
+    self.skipWaiting();
 });
 
 // cleans up old cache and activates new cache
@@ -49,6 +50,24 @@ self.addEventListener("fetch", event => {
         return;
     }
 
+    if (event.request.url.includes("/api/transaction")) {
+        event.respondWith(
+            caches
+                .open(PRECACHE)
+                .then((cache) => {
+                    return fetch(event.request)
+                        .then((response) => {
+
+                            if (response.status === 200) {
+                                cache.put(event.request.url, response.clone());
+                            }
+                            return response;
+                        }).catch((err) => cache.match(event.request));
+                }).catch((err) => console.log(err))
+        );
+        return;
+    }
+
     event.respondWith(caches
         .match(event.request)
         .then(data => {
@@ -64,5 +83,4 @@ self.addEventListener("fetch", event => {
             });
         })
     );
-
 });
