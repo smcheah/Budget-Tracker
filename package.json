@@ -23,6 +23,7 @@
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "lite-server": "^2.6.1",
+    "morgan": "^1.10.0",
     "mongoose": "^5.11.7"
   },
   "devDependencies": {
@@ -30,7 +31,6 @@
     "@babel/preset-env": "^7.12.10",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
-    "morgan": "^1.10.0",
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0",
     "webpack-pwa-manifest": "^4.3.0"
