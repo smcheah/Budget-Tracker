@@ -20,7 +20,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/transaction", {
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 
 // routes
-app.use(require("./routes/api.js"));
+// app.use(require("./routes/api.js"));
+require("./routes/api.js")(app)
 
 app.listen(PORT, () => {
     console.log(`App running on http://localhost:${PORT} !`);
