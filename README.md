@@ -45,7 +45,7 @@ To start up a local server:
 
 Deployed site link: https://tranquil-coast-60675.herokuapp.com/
 
-![demo image](https://github.com/smcheah/Workout-Tracker/blob/main/demo-image.PNG)
+![demo image](https://github.com/smcheah/Budget-Tracker/blob/main/demo-image.PNG)
 
 ## License ![License](https://img.shields.io/github/license/smcheah/Budget-Tracker)
 
