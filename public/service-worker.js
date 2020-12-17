@@ -2,14 +2,12 @@ const FILES_TO_CACHE = [
     "/",
     "/index.html",
     "/index.js",
-    "indexedDB.js",
+    "/indexedDB.js",
     "/manifest.webmanifest",
-    "/dist/manifest.json",
     "/styles.css",
-    "/favicon.ico",
     "/icons/icon-192x192.png",
     "/icons/icon-512x512.png",
-    // "/api/transaction"
+    "/api/transaction"
 ];
 
 const PRECACHE = "precache-v0";
