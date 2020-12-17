@@ -10,8 +10,9 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(compression());
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/transaction", {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
@@ -20,7 +21,6 @@ mongoose.connection.on('error', console.error.bind(console, 'connection error:')
 
 // routes
 app.use(require("./routes/api.js"));
-// app.use(compression());
 
 app.listen(PORT, () => {
     console.log(`App running on http://localhost:${PORT} !`);
